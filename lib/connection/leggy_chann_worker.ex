@@ -46,6 +46,11 @@ defmodule Leggy.ChannelWorker do
     {:noreply, create_channel(state)}
   end
 
+  @impl true
+  def handle_info(:retry, state) do
+    {:noreply, create_channel(state)}
+  end
+
   ## Internals
 
   defp create_channel(%{conn: conn} = state) do

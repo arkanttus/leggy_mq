@@ -6,8 +6,7 @@ defmodule Leggy.ChannelPool do
   def child_spec(opts) do
     %{
       id: opts[:name],
-      start: {__MODULE__, :start_link, [opts]},
-      type: :supervisor
+      start: {__MODULE__, :start_link, [opts]}
     }
   end
 
